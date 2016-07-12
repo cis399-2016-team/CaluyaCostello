@@ -1,0 +1,12 @@
+root@ip-10-0-4-164:~# service ssh status
+ssh start/running, process 16919
+root@ip-10-0-4-164:~# service ssh stop
+ssh stop/waiting
+root@ip-10-0-4-164:~# puppet agent -t
+Info: Retrieving plugin
+Info: Caching catalog for ip-10-0-4-164.us-west-2.compute.internal
+Info: Applying configuration version '1468282515'
+Notice: /Stage[main]/Sshd/Service[ssh]/ensure: ensure changed 'stopped' to 'running'
+Info: /Stage[main]/Sshd/Service[ssh]: Unscheduling refresh on Service[ssh]
+Notice: Finished catalog run in 0.14 seconds
+

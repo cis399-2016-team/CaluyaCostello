@@ -1,0 +1,9 @@
+root@ip-10-0-4-164:~# rm ~ubuntu/.ssh/authorized_keys
+root@ip-10-0-4-164:~# puppet agent -t
+Info: Retrieving plugin
+Info: Caching catalog for ip-10-0-4-164.us-west-2.compute.internal
+Info: Applying configuration version '1468282515'
+Notice: /Stage[main]/Sshd/Ssh_authorized_key[elijahcaluya_key_pair]/ensure: created
+Notice: /Stage[main]/Sshd/Ssh_authorized_key[costello-key-pair]/ensure: created
+Notice: Finished catalog run in 0.10 seconds
+
