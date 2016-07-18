@@ -1,0 +1,2 @@
+128.223.223.203 - - [18/Jul/2016:00:52:08 +0000] "GET /foo.html HTTP/1.1" 200 455 "-" "Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0"
+

@@ -1,0 +1,1 @@
+When one was removed, we could still access the webpage.  However if when we shut down both, the webpage doesn't display. Restoration of one or both of the instances led to the webpage displaying again. 
