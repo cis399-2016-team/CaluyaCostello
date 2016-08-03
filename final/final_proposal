@@ -1,0 +1,15 @@
+1)concrete goals for your project, and methods of testing and verification you will apply to determine whether those goals were met 
+	The goal for our project is to implement a webpage with a chat box on both of our instances. We will test this 
+	by visiting our webpage hosted by the instance using apache to see if the chatbox is functional for users.
+
+2)a discussion of your project's effect on its user population, and the user support issues it might raise 
+	The project would allow all puppet agents to host their own website based chat box. Support issues should be min	imal as puppet will apply the same configuration to all agents. The only real issue should stem from the impleme	ntation of the chat box via a .php file. If that is done correctly user issues should be minimal to non-existant
+	
+3)a discussion of security issues relevant to your project 
+	Security issues should be minimal since we are merely hosting a web chat service. No private data should be bein	g stored. Further, if we are using apache to host the page many security procautions should be taken care of for 	us.
+
+4)a discussion of the work needed to complete the project and what might be needed to maintain it for continued future use, and ways that installation and maintenance tasks can be automated 
+	To complete this project we will need to implement several html files under the appache module. These files will	likely include a basic webpage, a file for the chat box, and a css file. Maintenance should be a non issue with 	a simple application like this. Installation will be fully automated under the apache module.
+
+5)documentation of the project, both for the system administration work involved and for your user community 
+	Documentation for a project like this should be minimal. Users will intuitively know how to use a chat service a	nd sys admins will have no problem maintaining a basic chat service. The chat should require no documentation to	maintain or use 
