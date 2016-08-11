@@ -1,0 +1,29 @@
+---System Admin Documentation---
+
+To reinstall ejabberd delete all ejabberd files and consult https://docs.ejabberd.im/admin/guide/installation/
+
+1)To install an additional server on a new instance add a directory to /modules/ejabberd/files with the hostname of the instance. In this directory copy ejabberd.cfg from another instance. Then, in the new ejabberd.cfg locate %%admin user and %%hostname. They should look like this:
+
+%% Admin user
+{acl, admin, {user, "admin", "ec2-52-39-165-25.us-west-2.compute.amazonaws.com"}}.
+
+%% Hostname
+{hosts, ["ec2-52-39-165-25.us-west-2.compute.amazonaws.com"]}.
+
+where the old instances Public DNS is, place the new instances public DNS. Next, in the instance console, type "ejabberdctl register admin <localhost> <password>", replacing <local host> with the instance DNS and <password> with the desired admin password. Now, in a browser go to <new instances dns>:5280/admin to access the admin console. Username will be admin and password will be whatever you set it as previously. 
+
+For issues on this consult https://docs.ejabberd.im/admin/guide/configuration/ or https://www.digitalocean.com/community/tutorials/how-to-install-ejabberd-xmpp-server-on-ubuntu.
+
+2)To add or remove users visit <instance public dns>:5280/admin (with <instance public dns> replaced by your instance public dns). You will be prompted to enter a user name and password. The username is admin and password is password. Next click the "virtual hosts" tab located on the left hand side of the screen. Select the only host listed. A list of several options will appear. Select "users". You are now viewing all users of the server. To add a new user enter their user name in the "user" field and their password in the "password" field and then hit the "add user" button. To remove a user click on the users name. You will be brought to a new screen where there is a "remove user" button. Click remove user to delete the account.
+
+3)To change a users password first log in to the admin console. Follow the steps above to get to the page that lists all user profiles. Now click on the user who's password you wish to change. You will be brought to their page. There will be a field called "password". Fill this field with the desired password, then click the "change password" button. 
+
+4)For more information on using the web admin console visit https://www.ejabberd.im/files/doc/guide.html#htoc20
+
+5)For ejabberd.cfg help visit https://docs.ejabberid.im/admin/guide/configuration
+
+6)To get a new ejabberd server operating, you will need to edit the aws security group settings. If using current aws groups, simply right click the instance in the "instances" page, and select "networking" and then "change security groups". A screen will pop up. Select "CaluyaCostello Security Group" and then click the "Assign Security Groups" button. If not using current aws groups, you will need to add a security group allowing for inbound connection to ports 5222 and 5280. To do this add a custom TCP rule with port range 5222 and 5280 respectively. 
+
+7)To add server to server funtionality to ejabberd, also open port 5269 on aws console. This is typically open on most ejabberd.cfg but was left off of our project because it was deemed unneccisarry.
+
+8)For any additional help, google your issue or visit https://github.com/cis399-2016-team/CaluyaCostello-puppet/tree/master/modules/ejabberd and copy what we did. 
